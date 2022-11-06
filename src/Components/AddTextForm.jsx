@@ -14,9 +14,9 @@ export const AddTextForm = (messageBody, setMessageBody, setMessageList) => {
             }
             return <form className="inputTextForm" onSubmit={addMessage}>
                         <input type="text" value={text} onChange={(e) =>
-                                    setMessageBody(p => ({ ...p, text: e.target.value }))} />
+                                    setMessageBody(p => ({ ...p, text: e.target.value }))} /> // ошибка: setMessageBody не является функцией why?
                         <input type="text" value={autor} onChange={(e) =>
-                                    setMessageBody(p => ({ ...p, autor: e.target.value }))} />
+                                    setMessageBody(p => ({ ...p, autor: e.target.value }))} /> // ошибка: setMessageBody не является функцией why?
                         <button type="submit">Submit</button>
             </form>
 }
