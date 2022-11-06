@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Message } from './Components/Message';
+import { AddTextForm } from './Components/AddTextForm';
 
 export const App = () => {
 
@@ -26,6 +27,10 @@ export const App = () => {
   return (
     <div className="App">
       <Message text="Hello World, this is new chat!" />
+      <AddTextForm
+        setMessageList={setMessageList}
+        setMessageBody={setMessageBody}
+        messageBody={messageBody}></AddTextForm>
       {
         messageList.map(e =>
           <div>
