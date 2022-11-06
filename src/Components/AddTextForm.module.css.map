@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACH,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;CAAG",
+    "sources": [
+        "AddTextForm.module.sass"
+    ],
+    "names": [],
+    "file": "AddTextForm.module.css"
+}
