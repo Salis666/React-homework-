@@ -1,11 +1,11 @@
-export const AddTextForm = (messageBody, setMessageBody, setMessageList) => {
-            const { text, autor } = messageBody
+export const AddTextForm = (props) => {
+            const { text, autor } = props.messageBody
             const addMessage = (e) => {
                         e.preventDefault()
                         if (text.length > 0) {
-                                    setMessageList(p => [...p, { text, autor }])
+                                    props.setMessageList(p => [...p, { text, autor }])
                         }
-                        setMessageBody(
+                        props.setMessageBody(
                                     {
                                                 text: '',
                                                 autor: ''
@@ -14,9 +14,9 @@ export const AddTextForm = (messageBody, setMessageBody, setMessageList) => {
             }
             return <form className="inputTextForm" onSubmit={addMessage}>
                         <input type="text" value={text} onChange={(e) =>
-                                    setMessageBody(p => ({ ...p, text: e.target.value }))} /> // ошибка: setMessageBody не является функцией why?
+                                    props.setMessageBody(p => ({ ...p, text: e.target.value }))} />
                         <input type="text" value={autor} onChange={(e) =>
-                                    setMessageBody(p => ({ ...p, autor: e.target.value }))} /> // ошибка: setMessageBody не является функцией why?
+                                    props.setMessageBody(p => ({ ...p, autor: e.target.value }))} />
                         <button type="submit">Submit</button>
             </form>
 }

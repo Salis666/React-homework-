@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { Message } from './Components/Message';
 import { AddTextForm } from './Components/AddTextForm';
+import { useEffect } from 'react';
 
 export const App = () => {
 
@@ -24,6 +25,13 @@ export const App = () => {
     autor: ''
   })
   const robotText = 'Привет, ${messageBody.autor}. Я робот, давай поговорим?'
+  useEffect(() => {
+    if (messageList.length > 0 && messageList.slice(-1)[0].autor != 'Робот Толян') {
+      setTimeout(() => {
+        setMessageList(p => [...p, { text: robotText, autor: 'Робот Толян' }], [messageList])
+      }, 1500)
+    }
+  })
   return (
     <div className="App">
       <Message text="Hello World, this is new chat!" />
