@@ -24,7 +24,7 @@ export const App = () => {
     text: '',
     autor: ''
   })
-  const robotText = 'Привет, ${messageBody.autor}. Я робот, давай поговорим?'
+  const robotText = 'Здравствуй путник! Я робот, давай поговорим?'
   useEffect(() => {
     if (messageList.length > 0 && messageList.slice(-1)[0].autor != 'Робот Толян') {
       setTimeout(() => {
@@ -41,7 +41,7 @@ export const App = () => {
         messageBody={messageBody}></AddTextForm>
       {
         messageList.map(e =>
-          <div>
+          <div className='messageStyle'>
             <h4>Сообщение: {e.text}</h4>
             <p>Автор: {e.autor}</p>
           </div>

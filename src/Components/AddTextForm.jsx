@@ -1,3 +1,5 @@
+import style from './AddTextForm.module.css'
+
 export const AddTextForm = (props) => {
             const { text, autor } = props.messageBody
             const addMessage = (e) => {
@@ -12,11 +14,11 @@ export const AddTextForm = (props) => {
                                     }
                         )
             }
-            return <form className="inputTextForm" onSubmit={addMessage}>
-                        <input type="text" value={text} onChange={(e) =>
+            return <form className={style.inputTextForm} onSubmit={addMessage}>
+                        <input className={style.inputText} type="text" value={text} placeholder='Please enter text' onChange={(e) =>
                                     props.setMessageBody(p => ({ ...p, text: e.target.value }))} />
-                        <input type="text" value={autor} onChange={(e) =>
+                        <input className={style.inputText} type="text" value={autor} placeholder='Who are you?' onChange={(e) =>
                                     props.setMessageBody(p => ({ ...p, autor: e.target.value }))} />
-                        <button type="submit">Submit</button>
+                        <button className={style.buttonForm} type="submit">Submit</button>
             </form>
 }
