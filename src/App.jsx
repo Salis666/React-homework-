@@ -42,8 +42,8 @@ export const App = () => {
       {
         messageList.map(e =>
           <div className='messageStyle'>
-            <h4>Сообщение: {e.text}</h4>
-            <p>Автор: {e.autor}</p>
+            <h4 className='text'>Сообщение: {e.text}</h4>
+            <p className='autor'>Автор: {e.autor}</p>
           </div>
         )
       }

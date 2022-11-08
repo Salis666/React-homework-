@@ -1,4 +1,7 @@
 import style from './AddTextForm.module.css'
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField'
 
 export const AddTextForm = (props) => {
             const { text, autor } = props.messageBody
@@ -15,10 +18,10 @@ export const AddTextForm = (props) => {
                         )
             }
             return <form className={style.inputTextForm} onSubmit={addMessage}>
-                        <input className={style.inputText} type="text" value={text} placeholder='Please enter text' onChange={(e) =>
+                        <TextField id="standard-basic" label="Text" variant="standard" onChange={(e) =>
                                     props.setMessageBody(p => ({ ...p, text: e.target.value }))} />
-                        <input className={style.inputText} type="text" value={autor} placeholder='Who are you?' onChange={(e) =>
+                        <TextField id="standard-basic" label="Nikname" variant="standard" onChange={(e) =>
                                     props.setMessageBody(p => ({ ...p, autor: e.target.value }))} />
-                        <button className={style.buttonForm} type="submit">Submit</button>
+                        <Button type='submit' variant="contained">Send</Button>
             </form>
 }

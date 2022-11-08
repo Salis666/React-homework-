@@ -3,7 +3,7 @@
 }
 
 .messageStyle {
-  background-color: antiquewhite;
+  background-color: rgb(232, 241, 255);
   margin: 10px;
 }
 
@@ -41,4 +41,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.text {
+  font-family: monospace;
+  font-size: large;
+}
+
+.autor {
+  font-family: DejaVu Sans Mono;
 }
