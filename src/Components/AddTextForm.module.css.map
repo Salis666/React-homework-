@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACH,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;CAAG",
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACH,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;CACxC;;AAED,AAAA,UAAU,CAAC;EACC,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,OAAO;EACpB,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,IAAI;CAC5B",
     "sources": [
-        "AddTextForm.module.sass"
+        "AddTextForm.module.scss"
     ],
     "names": [],
     "file": "AddTextForm.module.css"

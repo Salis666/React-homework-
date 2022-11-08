@@ -8,4 +8,12 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
+
+.inputText {
+  width: 300px;
+  height: 42px;
+  font-family: Verdana;
+  color: black;
+  font-weight: bold;
+}
 /*# sourceMappingURL=AddTextForm.module.css.map */

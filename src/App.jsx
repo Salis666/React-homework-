@@ -26,27 +26,32 @@ export const App = () => {
   })
   const robotText = 'Здравствуй путник! Я робот, давай поговорим?'
   useEffect(() => {
-    if (messageList.length > 0 && messageList.slice(-1)[0].autor != 'Робот Толян') {
+    if (messageList.length > 0 && messageList.slice(-1)[0].autor !== 'Робот Толян') {
       setTimeout(() => {
         setMessageList(p => [...p, { text: robotText, autor: 'Робот Толян' }], [messageList])
       }, 1500)
     }
   })
+
   return (
     <div className="App">
       <Message text="Hello World, this is new chat!" />
       <AddTextForm
+        messageList={messageList}
         setMessageList={setMessageList}
         setMessageBody={setMessageBody}
         messageBody={messageBody}></AddTextForm>
-      {
-        messageList.map(e =>
-          <div className='messageStyle'>
-            <h4 className='text'>Сообщение: {e.text}</h4>
-            <p className='autor'>Автор: {e.autor}</p>
-          </div>
-        )
-      }
+      <div className='messageBox'>
+        {
+          messageList.map(e =>
+            <div className='messageStyle'>
+              <h4 className='text'>{e.text}</h4>
+              <p className='autor'>Автор: {e.autor}</p>
+            </div>
+          )
+        }
+      </div>
+
     </div>
   );
 }
