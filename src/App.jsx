@@ -3,6 +3,7 @@ import './App.css';
 import { Message } from './Components/Message';
 import { AddTextForm } from './Components/AddTextForm';
 import { useEffect } from 'react';
+import { ChatList } from './Components/ChatList'
 
 export const App = () => {
 
@@ -26,7 +27,7 @@ export const App = () => {
   })
   const robotText = 'Здравствуй путник! Я робот, давай поговорим?'
   useEffect(() => {
-    if (messageList.length > 0 && messageList.slice(-1)[0].autor !== 'Робот Толян') {
+    if (messageList.length > 0 && messageList.slice(-1)[0].autor != 'Робот Толян') {
       setTimeout(() => {
         setMessageList(p => [...p, { text: robotText, autor: 'Робот Толян' }], [messageList])
       }, 1500)
@@ -41,17 +42,19 @@ export const App = () => {
         setMessageList={setMessageList}
         setMessageBody={setMessageBody}
         messageBody={messageBody}></AddTextForm>
-      <div className='messageBox'>
-        {
-          messageList.map(e =>
-            <div className='messageStyle'>
-              <h4 className='text'>{e.text}</h4>
-              <p className='autor'>Автор: {e.autor}</p>
-            </div>
-          )
-        }
+      <div className='mainBox'>
+        <ChatList></ChatList>
+        <div className='messageBox'>
+          {
+            messageList.map((e, i) =>
+              <div key={i} className='messageStyle'>
+                <h4 className='text'>{e.text}</h4>
+                <p className='autor'>Автор: {e.autor}</p>
+              </div>
+            )
+          }
+        </div>
       </div>
-
     </div>
   );
 }
