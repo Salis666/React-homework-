@@ -4,23 +4,16 @@ import { Message } from './Components/Message';
 import { AddTextForm } from './Components/AddTextForm';
 import { useEffect } from 'react';
 import { ChatList } from './Components/ChatList'
+import { BrowserRouter, Routes } from 'react-router-dom';
+import { Route } from '@mui/icons-material';
+import { NotFound } from './Components/NotFound';
+import Conf from './Jsons/Conf.json'
+import { ConfComp } from './Components/ConfComp'
+
 
 export const App = () => {
 
-  const [messageList, setMessageList] = useState([
-    {
-      text: 'Привет! Меня зовут Кристина. Как у вас дела?',
-      autor: 'Kris'
-    },
-    {
-      text: 'Привет, Кристина! Нормально, кошку кормлю, а у тебя?',
-      autor: 'Alex'
-    },
-    {
-      text: 'У меня все хорошо, как зовут кошку?',
-      autor: 'Kris'
-    },
-  ])
+  const [messageList, setMessageList] = useState(Conf);
   const [messageBody, setMessageBody] = useState({
     text: '',
     autor: ''
@@ -43,8 +36,7 @@ export const App = () => {
         setMessageBody={setMessageBody}
         messageBody={messageBody}></AddTextForm>
       <div className='mainBox'>
-        <ChatList></ChatList>
-        <div className='messageBox'>
+        {/* <div className='messageBox'>
           {
             messageList.map((e, i) =>
               <div key={i} className='messageStyle'>
@@ -53,8 +45,20 @@ export const App = () => {
               </div>
             )
           }
-        </div>
+        </div> */}
       </div>
+      <BrowserRouter>
+        <ChatList></ChatList>
+
+        <div>
+          <Routes>
+            <Route path='1' element={<ConfComp />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+
+
+      </BrowserRouter>
     </div>
   );
 }
