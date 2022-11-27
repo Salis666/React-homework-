@@ -1,0 +1,32 @@
+
+.box {
+            display: flex;
+            flex-direction: column;
+            .linklist {
+                        margin-left: -10px;
+                        display: flex;
+                        justify-content: space-between;
+                        background-color: rgb(139, 208, 208);
+                        .linklistText {
+                                    text-decoration: none;
+                                    background-color: aqua;
+                                    padding: 5px;
+                                    margin: 10px;
+                        }
+            
+                        
+            }
+            .descriptionChat {
+                        display: flex;
+                        flex-direction: column;
+
+                        .textDescription {
+                                    text-align: center;
+                        }
+                        
+            }
+            .dog {
+                        align-self: center;
+                        width: 400px;
+            }
+}

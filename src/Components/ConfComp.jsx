@@ -1,12 +1,29 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import Conf from '../Jsons/Conf.json'
+import Conf from '../Jsons/chatlist.json'
+import { AddTextForm } from '../Components/AddTextForm';
+import style from './ChatList.module.css';
 
-export const ConfComp = () => {
-            const [messageList, setMessageList] = useState(Conf);
+
+export const ConfComp = ({ chatid }) => {
+            const [messageList, setMessageList] = useState(Conf[chatid].chat);
+            const [messageBody, setMessageBody] = useState({
+                        text: '',
+                        autor: ''
+            })
             return <>
-                        <h1>Писька рваная</h1>
+                        <div className={style.linklist}>
+                                    <a className={style.linklistText} href="/">Домашняя страница</a>
+                                    <a className={style.linklistText} href="/chatlist">Список чатов</a>
+                                    <a className={style.linklistText} href="/profile">Профиль</a>
+                        </div>
+                        <AddTextForm
+                                    messageList={messageList}
+                                    setMessageList={setMessageList}
+                                    setMessageBody={setMessageBody}
+                                    messageBody={messageBody}>
+                        </AddTextForm>
                         {
                                     messageList.map((e, i) =>
                                                 <div key={i} className='messageStyle'>

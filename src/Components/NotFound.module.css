@@ -1,0 +1,22 @@
+.text {
+  text-align: center;
+}
+
+.linklist {
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #8bd0d0;
+}
+
+.linklist .linklistText {
+  text-decoration: none;
+  background-color: aqua;
+  padding: 5px;
+  margin: 10px;
+}
+/*# sourceMappingURL=NotFound.module.css.map */

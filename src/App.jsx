@@ -5,15 +5,19 @@ import { AddTextForm } from './Components/AddTextForm';
 import { useEffect } from 'react';
 import { ChatList } from './Components/ChatList'
 import { BrowserRouter, Routes } from 'react-router-dom';
-import { Route } from '@mui/icons-material';
+import { Route } from 'react-router-dom';
 import { NotFound } from './Components/NotFound';
 import Conf from './Jsons/Conf.json'
 import { ConfComp } from './Components/ConfComp'
+import { Homepage } from './Components/Homepage';
+import { Profile } from './Components/Profile';
+import chatListJsonFile from './Jsons/chatlist.json';
 
 
 export const App = () => {
 
   const [messageList, setMessageList] = useState(Conf);
+  const [chatListJson, setchatListJson] = useState(chatListJsonFile)
   const [messageBody, setMessageBody] = useState({
     text: '',
     autor: ''
@@ -30,11 +34,6 @@ export const App = () => {
   return (
     <div className="App">
       <Message text="Hello World, this is new chat!" />
-      <AddTextForm
-        messageList={messageList}
-        setMessageList={setMessageList}
-        setMessageBody={setMessageBody}
-        messageBody={messageBody}></AddTextForm>
       <div className='mainBox'>
         {/* <div className='messageBox'>
           {
@@ -48,12 +47,18 @@ export const App = () => {
         </div> */}
       </div>
       <BrowserRouter>
-        <ChatList></ChatList>
 
         <div>
           <Routes>
-            <Route path='1' element={<ConfComp />} />
+            <Route path='/' element={<Homepage />} />
+            <Route path='/chatlist' element={<ChatList />}></Route>
+            {
+              chatListJson.map((e, i) =>
+                <Route path={'/chatlist/' + e.name} element={<ConfComp chatid={i} />}></Route>
+              )
+            }
             <Route path='*' element={<NotFound />} />
+            <Route path='/profile' element={<Profile />}></Route>
           </Routes>
         </div>
 
