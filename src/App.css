@@ -1,5 +1,23 @@
 .App {
-  text-align: center;
+  padding-left: 10px;
+}
+
+.mainBox {
+  display: flex;
+}
+
+.messageStyle {
+  width: 500px;
+  border: 3px solid rgb(189, 210, 243);
+  margin: 10px;
+}
+
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -32,7 +50,18 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.text {
+  font-family: monospace;
+  font-size: large;
+}
+
+.autor {
+  font-family: DejaVu Sans Mono;
+  background-color: rgb(202, 228, 255);
 }

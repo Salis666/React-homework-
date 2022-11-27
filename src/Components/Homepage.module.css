@@ -1,0 +1,49 @@
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box .linklist {
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #8bd0d0;
+}
+
+.box .linklist .linklistText {
+  text-decoration: none;
+  background-color: aqua;
+  padding: 5px;
+  margin: 10px;
+}
+
+.box .descriptionChat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box .descriptionChat .textDescription {
+  text-align: center;
+}
+
+.box .dog {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 400px;
+}
+/*# sourceMappingURL=Homepage.module.css.map */
